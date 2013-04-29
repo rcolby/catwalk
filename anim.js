@@ -4,6 +4,7 @@ var fasterButton = document.getElementById('fast');
 var normalButton = document.getElementById('normal');
 var slowerButton = document.getElementById('slow');
 var stopButton = document.getElementById('stop');
+var reverseButton = document.getElementById('back-up');
 var objectId = "";
 
 cat.style.left = '0px';
@@ -44,6 +45,14 @@ slowerButton.onclick = function() {
     walk(cat, 1);
   }, 41.67);
 };
+
+reverseButton.onclick = function() {
+  clearInterval(objectId);
+  objectId = setInterval(function() {
+    walk(cat, -2);
+  }, 41.67);
+};
+
 
 stopButton.onclick = function() {
   clearInterval(objectId);
